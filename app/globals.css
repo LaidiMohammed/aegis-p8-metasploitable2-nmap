@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@400;600;800&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root{--deep:#0a0a1f;--iris:#818cf8;--lime:#a3e635;}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:var(--deep);color:#e0e7ff;font-family:"Outfit",Arial,sans-serif;}
+
+/* topology background */
+.topo{background-image:radial-gradient(rgba(129,140,248,.08) 1px,transparent 1px);background-size:26px 26px;}
+
+/* node */
+.node{transition:all .35s cubic-bezier(.22,1,.36,1);}
+.node:hover{transform:scale(1.12);}
+
+/* link pulse */
+.link{stroke-dasharray:4 8;animation:dash 14s linear infinite;}
+@keyframes dash{to{stroke-dashoffset:-200;}}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease;}
+.reveal.in{opacity:1;transform:none;}
+
+.coord{font-family:"Space Mono",monospace;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;}
+::selection{background:var(--iris);color:#0a0a1f;}
+::-webkit-scrollbar{width:9px;}
+::-webkit-scrollbar-track{background:var(--deep);}
+::-webkit-scrollbar-thumb{background:#2a2a55;border:2px solid var(--deep);border-radius:9px;}
+::-webkit-scrollbar-thumb:hover{background:var(--iris);}
