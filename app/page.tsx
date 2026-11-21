@@ -1,4 +1,4 @@
-import Console from "@/components/Console";
+import TopologyConsole from "@/components/TopologyConsole";
 import Reveal from "@/components/Reveal";
 
 const FUNCS = [
@@ -27,7 +27,7 @@ export default function Page() {
           <Reveal delay={210}><div className="mt-8 flex flex-wrap gap-3"><a href="#map" className="rounded bg-iris px-6 py-3 font-mono text-xs font-bold uppercase tracking-widest text-deep hover:bg-white">Voir la carte ↓</a><a href="#fonctions" className="rounded border border-edge px-6 py-3 font-mono text-xs uppercase tracking-widest text-slate-300 hover:border-iris">Les fonctions</a></div></Reveal>
           <Reveal delay={280}><div className="mt-10 grid grid-cols-4 gap-4 border-t border-edge pt-6">{[["05","services"],["05","CVEs"],["09","tests mocks"],["00","prod"]].map(([n,l])=><div key={l}><div className="font-display text-2xl font-extrabold text-white">{n}</div><div className="coord text-slate-500">{l}</div></div>)}</div></Reveal>
         </div>
-        <Reveal delay={120}><Console /></Reveal>
+        <Reveal delay={120}><TopologyConsole /></Reveal>
       </section>
 
       <section id="fonctions" className="mx-auto max-w-7xl px-5 py-14">
@@ -58,3 +58,4 @@ export default function Page() {
     </main>
   );
 }
+
