@@ -25,7 +25,7 @@ export default function TopologyMap() {
         <circle cx={CX} cy={CY} r="9" fill="#818cf8" />
         <text x={CX} y={CY+44} textAnchor="middle" fill="#c7d2fe" fontSize="11" fontFamily="Space Mono">METASPLOITABLE2</text>
         {NODES.map((n,i)=>(
-          <g key={n.label} onClick={()=>setSel(i)} style={{cursor:"pointer"}} className="node">
+          <g key={n.label} onClick={()=>setSel(i)} onKeyDown={(e)=>{ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); setSel(i);} }} role="button" tabIndex={0} aria-label={`Service ${n.label} port ${n.port}`} style={{cursor:"pointer"}} className="node">
             <circle cx={n.x} cy={n.y} r={sel===i?20:16} fill={sel===i?"#a3e635":"#818cf8"} opacity={sel===i?.95:.7} />
             <text x={n.x} y={n.y+4} textAnchor="middle" fill="#0a0a1f" fontSize="10" fontFamily="Space Mono" fontWeight="700">{n.port}</text>
             <text x={n.x} y={n.y-26} textAnchor="middle" fill="#c7d2fe" fontSize="10" fontFamily="Space Mono">{n.label}</text>
